@@ -1,0 +1,167 @@
+$control-radius: $radius !default;
+$control-radius-small: $radius-small !default;
+$control-border-width: 1px !default;
+$control-height: 2.25em !default;
+$control-line-height: 1.5 !default;
+$control-padding-vertical: calc(0.375em - #{$control-border-width}) !default;
+$control-padding-horizontal: calc(0.625em - #{$control-border-width}) !default;
+$control-letter-spacing: 0.7px !default;
+
+$input-color: $grey-darker !default;
+$input-background-color: $white !default;
+$input-border-color: $grey-lighter !default;
+$input-height: $control-height !default;
+$input-shadow: inset 0 1px 2px rgba($black, 0.1) !default;
+$input-placeholder-color: rgba($input-color, 0.3) !default;
+$input-hover-color: $grey-darker !default;
+$input-hover-border-color: $grey-light !default;
+$input-focus-color: $grey-darker !default;
+$input-focus-border-color: $link !default;
+$input-focus-box-shadow-size: 0 0 0 0.125em !default;
+$input-focus-box-shadow-color: rgba($link, 0.25) !default;
+$input-disabled-color: $text-light !default;
+$input-disabled-background-color: $background !default;
+$input-disabled-border-color: $background !default;
+$input-disabled-placeholder-color: rgba($input-disabled-color, 0.3) !default;
+$input-arrow: $link !default;
+$input-icon-color: $grey-lighter !default;
+$input-icon-active-color: $grey !default;
+
+@mixin _placeholder() {
+  &::-moz-placeholder, &::-webkit-input-placeholder, &:-moz-placeholder, &::-ms-input-placeholder {
+    @content;
+  }
+}
+
+// https://github.com/klarna/ui/blob/master/Field/styles.scss
+@keyframes ds-autofill-start {
+  from { /**/}
+  to { /**/}
+}
+
+@keyframes ds-autofill-cancel {
+  from { /**/}
+  to { /**/}
+}
+
+@mixin webkit-autofill() {
+  &:focus-within:-webkit-autofill,
+  &:focus:-webkit-autofill,
+  &:active:-webkit-autofill,
+  &:-webkit-autofill {
+    background-color: red !important;
+    //background-image: inherit !important;
+    //color: inherit !important;
+    animation-name: ds-autofill-start;
+    transition: background-color 50000s ease-in-out 0s; // Make the backgound color become yellow _really slowly_
+  }
+
+  &:focus-within:not(:-webkit-autofill),
+  &:focus:not(:-webkit-autofill),
+  &:active:not(:-webkit-autofill),
+  &:not(:-webkit-autofill) {
+    animation-name: ds-autofill-cancel;
+  }
+}
+
+
+@mixin control {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  align-items: center;
+  border: $control-border-width solid transparent;
+  border-radius: $control-radius;
+  box-shadow: none;
+  display: inline-flex;
+  font-family: $family-primary;
+  font-size: $size-normal;
+  font-weight: $weight-normal;
+  height: $control-height;
+  min-height: $control-height;
+  justify-content: flex-start;
+  line-height: $control-line-height;
+  padding-bottom: $control-padding-vertical;
+  padding-left: $control-padding-horizontal;
+  padding-right: $control-padding-horizontal;
+  padding-top: $control-padding-vertical;
+  position: relative;
+  vertical-align: top;
+  letter-spacing: $control-letter-spacing;
+
+  // States
+  &:focus,
+  &.is-focused,
+  &:active,
+  &.is-active {
+    outline: none;
+  }
+
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+  }
+}
+
+%control {
+  @include control;
+}
+
+// The controls sizes use mixins so they can be used at different breakpoints
+@mixin control-small {
+  border-radius: $control-radius-small;
+  font-size: $size-small;
+}
+
+@mixin control-medium {
+  font-size: $size-medium;
+}
+
+@mixin control-large {
+  font-size: $size-large;
+}
+
+@mixin input {
+  @include control;
+  transition: box-shadow .5s,border-color .25s ease-in-out;
+  box-shadow: $input-shadow;
+  background-color: $input-background-color;
+  border-color: $input-border-color;
+  color: $input-color;
+
+  @include _placeholder {
+    color: $input-placeholder-color;
+  }
+
+  &:hover,
+  &.is-hovered {
+    border-color: $input-hover-border-color;
+    box-shadow: $input-hover-shadow;
+  }
+  &:focus,
+  &.is-focused,
+  &:active,
+  &.is-active {
+    border-color: $input-focus-border-color;
+    box-shadow: $input-focus-box-shadow-size $input-focus-box-shadow-color;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: $input-disabled-background-color;
+    border-color: $input-disabled-border-color;
+    box-shadow: none;
+    color: $input-disabled-color;
+    @include _placeholder {
+      color: $input-disabled-placeholder-color;
+    }
+  }
+}
+
+%input {
+  @include input;
+}
+
+// example use
+//.input {
+//  @include input;
+//}

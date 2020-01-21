@@ -1,0 +1,5 @@
+// solution for cross browser flex
+// some browsers have different default flex options (ie)
+@mixin flex-item-base() {
+  flex: 1 1 auto;
+}

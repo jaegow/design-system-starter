@@ -1,0 +1,22 @@
+@import "../../helpers";
+
+$label-color: $grey-darker !default
+$label-weight: $weight-bold !default
+
+@mixin label {
+  color: $label-color;
+  display: block;
+  font-size: $size-normal;
+  font-weight: $label-weight;
+}
+
+
+%label {
+  @include label;
+}
+
+// example use
+//.lable {
+//  @extend %label
+//}
+

@@ -1,0 +1,316 @@
+// Bulma / Initial / https://bulma.io/documentation/customize/variables/#initial-variables
+
+// Colors -------------------------------
+$black:          #000000;
+//$black-bis:    hsl(0, 0%, 7%);
+//$black-ter:    hsl(0, 0%, 14%);
+$grey-darker:    #53565a;
+$grey-dark:      #999999; // could be used for #999999 || #A9A9A9
+$grey:           #f1f1f1; // #f1f1f1 // #cacaca
+$grey-light:     #dfdfdf;
+$grey-lighter:   #f8f8f8;
+
+//$white-ter:    hsl(0, 0%, 96%);
+//$white-bis:    hsl(0, 0%, 98%);
+$white:          #ffffff;
+//$orange:       hsl(14,  100%, 53%);
+//$yellow:       hsl(48,  100%, 67%);
+//$green:        hsl(141, 71%,  48%);
+//$turquoise:    hsl(171, 100%, 41%);
+//$cyan:         hsl(204, 86%,  53%);
+$blue-dark:      #00296C;
+$blue:           #27509b;
+$blue-lighter:   #eceef6;
+$blue-light:     #afcfeb;
+//$purple:       hsl(271, 100%, 71%);
+$red:            #BE1D30;
+
+
+// Typography -------------------------------
+$family-sans-serif: 'Open Sans', Helvetica, sans-serif;
+//$family-monospace: monospace;
+//$render-mode: optimizeLegibility;
+$size-1: 3rem; // todo: refactor to remove unneeded sizes to use
+$size-2: 20px; // was 2.5rem;
+$size-3: 16px; // was 2rem;
+$size-4: 16px; // was 1.5rem;
+$size-5: 1.25rem;
+$size-6: 14px; // was 1rem;
+$size-7: 13px; // was 0.75rem;
+$size-8: 12px;
+$size-9: 9px;
+
+$weight-light: 300;
+$weight-normal: 400;
+$weight-medium: 500;
+$weight-semibold: 600;
+$weight-bold: 700;
+
+// Spacing -------------------------------
+//$block-spacing: 1.5rem;
+
+// Responsiveness -------------------------------
+// The container horizontal gap, which acts as the offset for breakpoints
+//$gap: 32px;
+// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+//$tablet: 769px;
+// 960px container + 4rem
+//$desktop: 960px + (2 * $gap);
+// 1152px container + 4rem
+//$widescreen: 1152px + (2 * $gap);
+//$widescreen-enabled: true;
+// 1344px container + 4rem
+//$fullhd: 1344px + (2 * $gap);
+//$fullhd-enabled: true;
+
+// Miscellaneous -------------------------------
+//$easing: ease-out;
+$radius-small: 0px;
+$radius: 0px;
+$radius-large: 0px;
+//$radius-rounded: 290486px;
+//$speed: 86ms;
+
+// Flags -------------------------------
+//$variable-columns: true;
+
+// Bulma / Derived variables / https://bulma.io/documentation/customize/variables/#derived-variables
+
+// COLORS !!!!! ONLY THESE  -------------------------------
+$primary: $blue;
+$secondary: $blue-lighter;
+$primary-disabled: $grey-dark;
+$info: $cyan;
+$success: $green;
+$warning: $yellow;
+$danger: $red;
+$light: $white-ter;
+$dark: $grey-darker;
+// COLORS !!!!! ONLY THESE  -------------------------------
+
+// Invert colors --------------------------
+// $orange-invert: findColorInvert($orange);
+// $yellow-invert: findColorInvert($yellow);
+// $green-invert: findColorInvert($green);
+// $turquoise-invert: findColorInvert($turquoise);
+// $cyan-invert: findColorInvert($cyan);
+// $blue-invert: findColorInvert($blue);
+// $purple-invert: findColorInvert($purple);
+// $red-invert: findColorInvert($red);
+//$primary-invert: findColorInvert($primary);
+// $info-invert: $cyan-invert;
+// $success-invert: $green-invert;
+// $warning-invert: $yellow-invert;
+// $danger-invert: $red-invert;
+// $light-invert: $dark;
+// $dark-invert: $light;
+
+// General colors  --------------------------
+$background: $white;
+// $border: $grey-lighter;
+// $border-hover: $grey-light;
+
+// Text colors  --------------------------
+$text: $black;
+$text-invert: findColorInvert($text);
+$text-light: $grey-light;
+$text-strong: rgba(0,0,0,.87);
+
+// Code colors  --------------------------
+// $code: $red;
+// $code-background: $background;
+// $pre: $text;
+// $pre-background: $background;
+
+// Link colors  --------------------------
+$link: rgb(83, 86, 90);
+// $link-invert: $blue-invert;
+// $link-visited: $purple;
+$link-hover: rgb(83, 86, 90);
+// $link-hover-border: $grey-light;
+// $link-focus: $grey-darker;
+// $link-focus-border: $blue;
+// $link-active: $grey-darker;
+// $link-active-border: $grey-dark;
+
+// Typography / Base --------------------------
+$family-primary: $family-sans-serif;
+$family-secondary: Open Sans,regular;
+// $family-code: $family-monospace;
+$size-small: $size-7;
+$size-normal: $size-6;
+$size-medium: $size-5;
+$size-large: $size-4;
+$base-heading-color: $text-strong;
+$base-heading-weight: $weight-semibold;
+$base-heading-line-height: 1.125;
+//$base-blockquote-background-color: $background;
+//$base-blockquote-border-left: 5px solid $border;
+//$base-blockquote-padding: 1.25em 1.5em;
+//$base-pre-padding: 1.25em 1.5em;
+//$base-table-cell-border: 1px solid $border;
+//$base-table-cell-border-width: 0 0 1px;
+//$base-table-cell-heading-color: $text-strong;
+//$base-table-head-cell-border-width: 0 0 2px;
+//$base-table-head-cell-color: $text-strong;
+//$base-table-foot-cell-border-width: 2px 0 0;
+//$base-table-foot-cell-color: $text-strong;
+
+// Content -------------------------------
+// $content-heading-color: $text-strong;
+// $content-heading-weight: $weight-semibold;
+// $content-heading-line-height: 1.125;
+// $content-blockquote-background-color: $background;
+// $content-blockquote-border-left: 5px solid $border;
+// $content-blockquote-padding: 1.25em 1.5em;
+// $content-pre-padding: 1.25em 1.5em;
+// $content-table-cell-border: 1px solid $border;
+// $content-table-cell-border-width: 0 0 1px;
+$content-table-cell-padding: 0;
+// $content-table-cell-heading-color: $text-strong;
+// $content-table-head-cell-border-width: 0 0 2px;
+// $content-table-head-cell-color: $text-strong;
+// $content-table-foot-cell-border-width: 2px 0 0;
+// $content-table-foot-cell-color: $text-strong;
+
+// Lists and maps  --------------------------
+// $custom-colors: null;
+// $custom-shades: null;
+// $colors: mergeColorMaps(("white": ($white, $black), "black": ($black, $white), "light": ($light, $light-invert), "dark": ($dark, $dark-invert), "primary": ($primary, $primary-invert), "link": ($link, $link-invert), "info": ($info, $info-invert), "success": ($success, $success-invert), "warning": ($warning, $warning-invert), "danger": ($danger, $danger-invert)), $custom-colors);
+// $shades: mergeColorMaps(("black-bis": $black-bis, "black-ter": $black-ter, "grey-darker": $grey-darker, "grey-dark": $grey-dark, "grey": $grey, "grey-light": $grey-light, "grey-lighter": $grey-lighter, "white-ter": $white-ter, "white-bis": $white-bis), $custom-shades);
+$sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7;
+
+// todo: refactor animaiton(s) to use
+// Animation -------------------------------
+// $transition-duration: 125ms;
+// $transition-background-color: background-color $transition-duration ease-out;
+// $transition-color: color $transition-duration ease-out;
+
+// Bulma / Generic / https://bulma.io/documentation/customize/variables/#generic-variables
+$body-background-color: $grey-lighter;
+//$body-size: 16px;
+//$body-min-width: 300px;
+//$body-rendering: optimizeLegibility;
+$body-family: $family-primary;
+$body-overflow-x: scroll;
+$body-overflow-y: scroll;
+//$body-color: $text;
+$body-font-size: $size-normal;
+$body-weight: $weight-normal;
+//$body-line-height: 1.5;
+//$code-family: $family-code;
+//$code-padding: 0.25em 0.5em 0.25em;
+//$code-weight: normal;
+//$code-size: 0.875em;
+//$small-font-size: 0.875em;
+//$hr-background-color: $background;
+//$hr-height: 2px;
+//$hr-margin: 1.5rem 0;
+//$strong-color: $text-strong;
+//$strong-weight: $weight-bold;
+//$pre-font-size: 0.875em;
+//$pre-padding: 1.25rem 1.5rem;
+//$pre-code-font-size: 1em;
+
+// Bulma / Control / Shared with control elements (buttons, forms, etc)
+$control-radius: 0;
+$control-radius-small: 0;
+$control-border-width: 1px;
+$control-height: 46px;
+$control-line-height: 1.5;
+//$control-padding-vertical: calc(0.375em - #{$control-border-width}) !default
+//$control-padding-horizontal: calc(0.625em - #{$control-border-width}) !default
+$control-letter-spacing: 0.7px;
+
+// Bulma / Button / https://bulma.io/documentation/elements/button/#variables
+$button-color: $white;
+$button-background-color: $primary;
+$button-border-color: $primary;
+$button-border-width: $control-border-width;
+$button-padding-vertical: 10px;
+$button-padding-horizontal: 15px;
+$button-hover-color: $white;
+$button-hover-border-color: $blue-dark;
+$button-hover-background-color: $blue-dark;
+// $button-focus-color: $link-focus;
+// $button-focus-border-color: $link-focus-border;
+// $button-focus-box-shadow-size: 0 0 0 0.125em;
+// $button-focus-box-shadow-color: rgba($link, 0.25);
+// $button-active-color: $link-active;
+// $button-active-border-color: $link-active-border;
+// $button-text-color: #fff;
+// $button-text-hover-background-color: $background;
+// $button-text-hover-color: $text-strong;
+$button-disabled-background-color: $grey-light;
+$button-disabled-border-color: $grey-light;
+$button-disabled-color: $primary-disabled;
+// $button-disabled-shadow: none;
+// $button-disabled-opacity: 0.5;
+// $button-static-color: $grey;
+// $button-static-background-color: $white-ter;
+// $button-static-border-color: $grey-lighter;
+
+// Bulma / Form / input / https://bulma.io/documentation/form/input/#variables
+$input-color: $text;
+$input-background-color: $white;
+$input-border-color: #999999; // #27509b
+$input-shadow: 0 1px 2px hsla(0,0%,4%,.1);
+$input-hover-color: $text;
+$input-hover-border-color: $primary;
+$input-hover-shadow: 0 1px 2px hsla(0,0%,4%,.1);
+// $input-focus-color: $grey-darker;
+// $input-focus-border-color: $link;
+$input-focus-box-shadow-size: 0 0 5px;
+$input-focus-box-shadow-color: $grey;
+// $input-disabled-color: $text-light;
+// $input-disabled-background-color: $background;
+// $input-disabled-border-color: $background;
+// $input-arrow: $link;
+// $input-icon-color: $grey-lighter;
+// $input-icon-active-color: $grey;
+
+//  Bulma / Form / file / https://bulma.io/documentation/form/file/#variables
+// $file-border-color: $border;
+// $file-radius: $radius;
+// $file-cta-background-color: $white-ter;
+// $file-cta-color: $grey-dark;
+// $file-cta-hover-color: $grey-darker;
+// $file-cta-active-color: $grey-darker;
+// $file-name-border-color: $border;
+// $file-name-border-style: solid;
+// $file-name-border-width: 1px 1px 1px 0;
+// $file-name-max-width: 16em;
+$label-color: $black;
+$label-weight: $weight-bold;
+
+
+//  Bulma / Card / (only using little parts right now)
+$card-color: $text;
+$card-background-color: $white;
+$card-shadow: 0 2px 3px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1);
+$card-header-background-color: transparent;
+$card-header-color: $text-strong;
+$card-header-padding: 15px;
+$card-header-shadow: 0 1px 2px rgba($black, 0.1);
+$card-header-weight: $weight-bold;
+$card-content-background-color: transparent;
+$card-content-padding: 15px;
+$card-footer-background-color: transparent;
+$card-footer-border-top: 1px solid $border;
+$card-footer-padding: 15px;
+$card-media-margin: $block-spacing;
+
+// Bulma Exstension / https://wikiki.github.io/layout/divider/#variables
+$divider-background-color: $grey-dark;
+$divider-thickness: .1rem;
+//$divider-font-size: $size-7;
+//$divider-text-color: $grey-light !default
+$divider-space: 2px;
+$divider-sizes: $ds-flows;
+
+
+// Custom ----------------------------
+$radio-button-size: 20px;
+
+// todo: make a popup component
+$popup-shadow: rgba(0, 0, 0, 0.2) 0px 5px 6px;

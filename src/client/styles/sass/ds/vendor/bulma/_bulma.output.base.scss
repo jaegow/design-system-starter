@@ -1,0 +1,376 @@
+$body-background-color: $white !default;
+$body-size: 16px !default;
+$body-min-width: 300px !default;
+$body-rendering: optimizeLegibility !default;
+$body-family: $family-primary !default;
+$body-overflow-x: hidden !default;
+$body-overflow-y: hidden !default;
+$body-color: $text !default;
+$body-font-size: 1em !default;
+$body-weight: $weight-normal !default;
+$body-line-height: 1.5 !default;
+$code-family: $family-code !default;
+$code-padding: 0.25em 0.5em 0.25em !default;
+$code-weight: normal !default;
+$code-size: 0.875em !default;
+$small-font-size: 0.875em !default;
+$hr-background-color: $background !default;
+$hr-height: 2px !default;
+$hr-margin: 1.5rem 0 !default;
+$strong-color: $text-strong !default;
+$strong-weight: $weight-bold !default;
+$pre-font-size: 0.875em !default;
+$pre-padding: 1.25rem 1.5rem !default;
+$pre-code-font-size: 1em !default;
+
+$base-heading-color: $text-strong !default;
+$base-heading-weight: $weight-semibold !default;
+$base-heading-line-height: 1.125 !default;
+$base-blockquote-background-color: $background !default;
+$base-blockquote-border-left: 5px solid $border !default;
+$base-blockquote-padding: 1.25em 1.5em !default;
+$base-pre-padding: 1.25em 1.5em !default;
+$base-table-cell-border: 1px solid $border !default;
+$base-table-cell-border-width: 0 0 1px !default;
+$content-table-cell-padding: 0.5em 0.75em !default;
+$base-table-cell-heading-color: $text-strong !default;
+$base-table-head-cell-border-width: 0 0 2px !default;
+$base-table-head-cell-color: $text-strong !default;
+$base-table-foot-cell-border-width: 2px 0 0 !default;
+$base-table-foot-cell-color: $text-strong !default;
+
+// use on html, body, or when scoping css to a element
+@mixin root-element {
+  direction: ltr;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-color: $body-background-color;
+  text-rendering: $body-rendering;
+  text-size-adjust: 100%;
+  font-family: $body-family;
+  color: $body-color;
+  font-size: $body-font-size;
+  font-weight: $body-weight;
+  line-height: $body-line-height;
+  margin: 0;
+  padding: 0;
+  // might not be necessary... came from clean-slate
+  font-style: normal;
+  font-variant: normal;
+  text-align: left; // for IE, Opera
+  text-align: start; // recommended W3C Spec
+  text-decoration: none;
+}
+
+// Box sizing for all
+* {
+  &,
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+// Blocks
+blockquote,
+dd,
+dl,
+dt,
+fieldset,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+iframe,
+input,
+legend,
+li,
+ol,
+p,
+pre,
+select,
+span,
+textarea,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: .5px;
+  font-size: 100%;
+  color: $base-heading-color;
+  font-weight: $base-heading-weight;
+  line-height: $base-heading-line-height;
+}
+
+h1 {
+  font-size: $size-2;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: $size-3;
+  font-weight: $weight-bold;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: $size-4;
+  font-weight: $weight-bold;
+}
+
+h4 {
+  font-size: $size-5;
+}
+
+h5 {
+  font-size: $size-6;
+}
+
+h6 {
+  font-size: $size-7;
+}
+
+blockquote {
+  background-color: $base-blockquote-background-color;
+  border-left: $base-blockquote-border-left;
+  padding: $base-blockquote-padding;
+}
+
+ol {
+  list-style-position: outside;
+  margin-left: 2em;
+  margin-top: 1em;
+  &:not([type]) {
+    list-style-type: decimal;
+    &.is-lower-alpha {
+      list-style-type: lower-alpha;
+    }
+    &.is-lower-roman {
+      list-style-type: lower-roman;
+    }
+    &.is-upper-alpha {
+      list-style-type: upper-alpha;
+    }
+    &.is-upper-roman {
+      list-style-type: upper-roman;
+    }
+  }
+}
+
+ul {
+  list-style: disc outside;
+  margin-left: 2em;
+  margin-top: 1em;
+  ul {
+    list-style-type: circle;
+    margin-top: 0.5em;
+    ul {
+      list-style-type: square;
+    }
+  }
+}
+
+dd {
+  margin-left: 2em;
+}
+
+figure {
+  margin-left: 2em;
+  margin-right: 2em;
+  text-align: center;
+  &:not(:first-child) {
+    margin-top: 2em;
+  }
+  &:not(:last-child) {
+    margin-bottom: 2em;
+  }
+  img {
+    display: inline-block;
+  }
+  figcaption {
+    font-style: italic;
+  }
+}
+
+sup,
+sub {
+  font-size: 75%;
+}
+
+// Media
+img,
+embed,
+iframe,
+object,
+video {
+  border: 0;
+  height: auto;
+  max-width: 100%;
+}
+
+audio {
+  max-width: 100%;
+}
+
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+section {
+  display: block;
+}
+
+input,
+select,
+textarea {
+  font-family: $body-family;
+}
+
+a {
+  color: $link;
+  cursor: pointer;
+  text-decoration: none;
+  strong {
+    color: currentColor;
+  }
+  &:hover {
+    color: $link-hover;
+  }
+}
+
+hr {
+  background-color: $hr-background-color;
+  border: none;
+  display: block;
+  height: $hr-height;
+  margin: $hr-margin;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  // vertical-align: baseline;
+}
+
+small {
+  font-size: $small-font-size;
+}
+
+strong {
+  color: $strong-color;
+  font-weight: $strong-weight;
+}
+
+// Block
+fieldset {
+  border: none;
+}
+
+code,
+pre {
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: auto;
+  font-family: $code-family;
+}
+
+pre {
+  @include overflow-touch;
+  overflow-x: auto;
+  background-color: $pre-background;
+  color: $pre;
+  font-size: $pre-font-size;
+  overflow-x: auto;
+  padding: $pre-padding;
+  white-space: pre;
+  word-wrap: normal;
+  code {
+    background-color: transparent;
+    color: currentColor;
+    font-size: $pre-code-font-size;
+    padding: 0;
+  }
+}
+
+code {
+  background-color: $code-background;
+  color: $code;
+  font-size: $code-size;
+  font-weight: $code-weight;
+  padding: $code-padding;
+}
+
+table {
+  width: 100%;
+  td,
+  th {
+    border: $base-table-cell-border;
+    border-width: $base-table-cell-border-width;
+    padding: $content-table-cell-padding;
+  }
+  th {
+    color: $base-table-cell-heading-color;
+    &:not([align]) {
+      text-align: left;
+    }
+  }
+  thead {
+    td,
+    th {
+      border-width: $base-table-head-cell-border-width;
+      color: $base-table-head-cell-color;
+    }
+  }
+  tfoot {
+    td,
+    th {
+      border-width: $base-table-foot-cell-border-width;
+      color: $base-table-foot-cell-color;
+    }
+  }
+  tbody {
+    tr {
+      &:last-child {
+        td,
+        th {
+          border-bottom-width: 0;
+        }
+      }
+    }
+  }
+}
+
+@import "bulma.output.button";
+
+// remove zoom-in for iOS devices
+//input[type="color"],
+//input[type="date"],
+//input[type="datetime"],
+//input[type="datetime-local"],
+//input[type="email"],
+//input[type="month"],
+//input[type="number"],
+//input[type="password"],
+//input[type="search"],
+//input[type="tel"],
+//input[type="text"],
+//input[type="time"],
+//input[type="url"],
+//input[type="week"],
+//select:focus,
+//textarea {
+//  font-size: 16px;
+//}

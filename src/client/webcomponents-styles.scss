@@ -1,0 +1,19 @@
+// these imports do not generate any css (just helpers)
+@import "styles/sass/ds/helpers";
+@import "styles/sass/ds/vendor/bulma/bulma.config.all";
+
+// generates actual css
+@include extraSpecificityScope() {
+  @import "styles/sass/ds/vendor/bulma/bulma.output.all";
+  @import "styles/sass/ds/util/utilities.flow";
+  @import "styles/sass/ds/util/utilities.display";
+  @import "styles/sass/ds/util/utilities.layout";
+  @import "styles/sass/ds/util/utilities.flex";
+
+  .material-icons {
+    @include material-icon-container;
+  }
+
+  // used for scoping, resetting some styles,
+  @include root-element();
+}

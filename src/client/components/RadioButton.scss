@@ -1,0 +1,73 @@
+@import "../styles/sass/ds/helpers";
+@import "../styles/sass/ds/vendor/bulma/bulma.config.all";
+
+$radio-button-size: 20px !default;
+
+@include extraSpecificityScope() {
+  // todo: merge the styles for this and CheckBox.scss
+  // todo: change and move this to RadioGroup.scss
+  .radio-button {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    cursor: pointer;
+
+    input {
+      opacity: 0;
+      width: $radio-button-size;
+      height: $radio-button-size;
+      cursor: pointer;
+    }
+
+    label {
+      cursor: pointer;
+      color: #0a0a0a;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: normal;
+      margin-left: flow(xxs);
+    }
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      cursor: pointer;
+      pointer-events: none;
+      user-select: none;
+      width: $radio-button-size;
+      height: $radio-button-size;
+      left: 0;
+      top: 0;
+      transition: opacity .2s ease-in-out;
+      border-radius: 50%;
+    }
+
+    &::before {
+      background-color: white;
+      border: 2px solid $primary;
+    }
+
+    &::after {
+      transform: scale(0.45);
+      background-color: $primary;
+      opacity: 0;
+    }
+
+    &.is-selected {
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &.is-disabled {
+      &::before {
+        border-color: $primary-disabled;
+      }
+
+      &::after {
+        background-color: $primary-disabled;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,25 @@
+@import "../../helpers";
+
+$help-size: $size-small !default
+
+@mixin help {
+  display: block;
+  font-size: $help-size;
+  margin-top: flow(xxs);
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    &.is-#{$name} {
+      color: $color;
+    }
+  }
+}
+
+%help {
+  @include help;
+}
+
+// how to use
+//.help {
+//  @extend %help;
+//}
+

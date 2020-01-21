@@ -1,0 +1,17 @@
+
+// This file is only configuration and does not build css
+
+// Bulma / must be imported first parts / variables, functions, mixins, utilities, etc
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
+@import "~bulma/sass/utilities/derived-variables";
+@import "~bulma/sass/utilities/animations";
+@import "~bulma/sass/utilities/mixins";
+
+@import "bulma.config.variable.overrides";
+
+@import "bulma.config.control-input";
+@import "bulma.config.label";
+@import "bulma.config.help";
+@import "bulma.config.select";
+

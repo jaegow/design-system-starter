@@ -1,0 +1,24 @@
+@import "../styles/sass/ds/helpers";
+@import "../styles/sass/ds/vendor/bulma/bulma.config.all";
+
+@include extraSpecificityScope() {
+  .is-accordian {
+
+    &:not(.is-open) {
+      .card-content {
+        display: none;
+      }
+    }
+
+    &.is-open {
+      .card-header {
+        padding-bottom: 0;
+      }
+
+      .card-content {
+        padding-top: 0;
+      }
+    }
+
+  }
+}

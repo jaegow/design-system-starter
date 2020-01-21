@@ -1,0 +1,66 @@
+// ds Spacing
+
+$ds-spacing-unit:       0.333333333rem;   // 6px
+$ds-spacing-unit-xxs:   0.666666667rem;   // 12px
+$ds-spacing-unit-xs:    1rem;             // 18px
+$ds-spacing-unit-s:     1.333333333rem;   // 24px
+$ds-spacing-unit-m:     2rem;             // 36px
+$ds-spacing-unit-l:     2.666666667rem;   // 48px
+$ds-spacing-unit-xl:    3.555555556rem;   // 64px
+$ds-spacing-unit-xxl:   5.333333333rem;   // 96px
+
+$ds-spacing: (
+  null: $ds-spacing-unit,
+  xxs: $ds-spacing-unit-xxs,
+  xs: $ds-spacing-unit-xs,
+  s: $ds-spacing-unit-s,
+  m: $ds-spacing-unit-m,
+  l: $ds-spacing-unit-l,
+  xl: $ds-spacing-unit-xl,
+  xxl: $ds-spacing-unit-xxl,
+  none: 0
+) !default;
+
+
+// ds Flow units
+
+$ds-flow:         30px;
+$ds-flow-xxs:     $ds-flow / 4;
+$ds-flow-xs:      $ds-flow / 3;
+$ds-flow-s:       $ds-flow / 2;
+$ds-flow-m:       $ds-flow;
+$ds-flow-l:       $ds-flow * 1.5;
+$ds-flow-xl:      $ds-flow * 2;
+$ds-flow-xxl:     $ds-flow * 2.5;
+
+$ds-flows: (
+  null: $ds-flow,
+  xxs: $ds-flow-xxs,
+  xs: $ds-flow-xs,
+  s: $ds-flow-s,
+  m: $ds-flow-m,
+  l: $ds-flow-l,
+  xl: $ds-flow-xl,
+  xxl: $ds-flow-xxl,
+  none: 0
+) !default;
+
+// ds Breakpoints
+
+$ds-breakpoint-unit-s:    0;
+$ds-breakpoint-unit-m:    640px;
+$ds-breakpoint-unit-l:    864px;
+$ds-breakpoint-unit-xl:    1024px;
+$ds-breakpoint-unit-xxl:   1200px;
+$ds-breakpoint-unit-xxxl:  1440px;
+
+$ds-breakpoints: (
+  s: $ds-breakpoint-unit-s,
+  m: $ds-breakpoint-unit-m,
+  l: $ds-breakpoint-unit-l,
+  xl: $ds-breakpoint-unit-xl,
+  xxl: $ds-breakpoint-unit-xxl,
+) !default;
+
+
+

@@ -1,0 +1,39 @@
+@import "../styles/sass/ds/helpers";
+@import "../styles/sass/ds/vendor/bulma/bulma.config.all";
+
+@include extraSpecificityScope() {
+  .loader {
+    position: relative;
+  }
+
+  //.loader__content {
+  //
+  //}
+
+  .loader__animation {
+    position: absolute;
+  }
+
+  .loader.is-loading {
+
+    .loader__animation {
+      background-color: $primary;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:after {
+        content: "Loading...";
+        //width: 100%;
+        //text-a
+      }
+
+    }
+  }
+}

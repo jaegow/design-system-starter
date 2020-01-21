@@ -1,0 +1,82 @@
+@import "../styles/sass/ds/helpers";
+@import "../styles/sass/ds/vendor/bulma/bulma.config.all";
+
+$vendor-inputs: '.k-input, .rw-combobox > .rw-widget-picker, .rw-datetime-picker > .rw-widget-picker, .rw-dropdown-list > .rw-widget-input';
+
+@include extraSpecificityScope() {
+  .field {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    > * {
+      @include flex-item-base();
+      width: 100%;
+      &:not(:last-child) {
+        margin-bottom: flow(xxs);
+      }
+    }
+
+    .field__title {
+      color: $black;
+    }
+
+    .field__label {
+      @include label;
+      color: $black;
+    }
+
+    .input, #{$vendor-inputs} {
+      @include input;
+      -webkit-touch-callout: none;
+    }
+
+    &.field--warning, &.field--error {
+      .field__title, .field__label {
+        color: $danger;
+      }
+
+      .input, #{$vendor-inputs} {
+        border-color: $danger;
+      }
+    }
+
+    &.field--success {
+      .field__title, .field__label {
+        color: $success;
+      }
+
+      .input, #{$vendor-inputs} {
+        border-color: $success;
+      }
+    }
+  }
+
+  .field__control {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    > * {
+      @include flex-item-base();
+      width: 100%;
+    }
+
+    &.is-horizontal {
+      flex-direction: row;
+      > * {
+        flex: 0 0 0;
+        &:not(:last-child) {
+          margin-right: flow(m);
+        }
+      }
+    }
+  }
+
+  .field__info {
+    @include label;
+    margin-top: - flow(xxs);
+    font-size: $size-small;
+    font-weight: $weight-medium;
+  }
+
+}

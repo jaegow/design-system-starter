@@ -1,0 +1,41 @@
+
+@mixin material-icon-container() {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased; // Support for all WebKit browsers.
+  text-rendering: optimizeLegibility; // Support for Safari and Chrome.
+  -moz-osx-font-smoothing: grayscale; // Support for Firefox.
+  font-feature-settings: 'liga'; // Support for IE.
+
+  i {
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+%material-icon {
+  @include material-icon-container;
+}
+
+@mixin is-material-icon($iconCode: \E87C, $before-after: before) {
+  @include material-icon-container;
+
+  @if($before-after == before) {
+    &::before {
+      content: $iconCode;
+    }
+  } @else {
+    &::after {
+      content: $iconCode;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+// todo: move these somewhere else... these are added in the webpack config
+// todo: figure this out so we can avoid having to wrap
+//$app: null !default;
+//$webcomponent: null !default;
+//@debug "$app:          `#{$app}`";
+//@debug "$webcomponent: `#{$webcomponent}`";
+
+// !! HACK HARD CODED !! --> class added to block css from leaking to other components on the page
+// !! HACK HARD CODED !! --> class must match same class located here: src/web-components/ReactWebComponent.js > mountReact()
+@mixin extraSpecificityScope() {
+  .pxwcs {
+    @content;
+  }
+}
+
+
+// !! HACK HARD CODED !! --> block css from leaking to other components on the page
+// !! HACK HARD CODED !! --> match element selector located here: src/public/index.html
+@mixin kendoPortalScope() {
+  #kendo-portal {
+    @content;
+  }
+}

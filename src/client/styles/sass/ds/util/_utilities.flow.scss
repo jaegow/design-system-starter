@@ -1,0 +1,105 @@
+
+$flow-sizes: (
+  null: $ds-spacing-unit,
+  "-xxs": $ds-spacing-unit-xxs,
+  "-xs": $ds-spacing-unit-xs,
+  "-s": $ds-spacing-unit-s,
+  "-m": $ds-spacing-unit-m,
+  "-l": $ds-spacing-unit-l,
+  "-xl": $ds-spacing-unit-xl,
+  "-xxl": $ds-spacing-unit-xxl,
+  "-none": 0
+) !default;
+
+$debugList: ();
+
+@each $flow-namespace, $flow-size in $flow-sizes {
+  $util-class-name: '.u-v-flow#{$flow-namespace}';
+  $debugList: append($debugList, $util-class-name);
+
+  @debug "`#{$util-class-name}`";
+
+  #{$util-class-name} {
+    display: flex;
+    flex-direction: column;
+
+    & > * {
+      @include flex-item-base();
+
+      &:not(:last-child) {
+        margin-bottom : $flow-size !important;
+      }
+    }
+
+    &.is-split {
+      & > * {
+        flex: calc(50% - #{$flow-size/2}) 0 0;
+      }
+    }
+
+    @include break(l, down) {
+      &.is-split {
+        & > * {
+          @include flex-item-base();
+        }
+      }
+
+      [class^="u-h-flow"] {
+        & > *:not(:last-child) {
+          margin-bottom : $flow-size !important;
+        }
+      }
+    }
+  }
+}
+
+@each $flow-namespace, $flow-size in $flow-sizes {
+  $util-class-name: '.u-h-flow#{$flow-namespace}';
+  $debugList: append($debugList, $util-class-name);
+
+  @debug "`#{$util-class-name}`";
+
+  #{$util-class-name} {
+    display: flex;
+    flex-direction: row;
+
+    & > * {
+      @include flex-item-base();
+
+      &:not(:first-child) {
+        margin-left: $flow-size/2 !important;
+      }
+
+      &:not(:last-child) {
+        margin-right: $flow-size/2 !important;
+      }
+    }
+
+    &.is-split {
+      & > * {
+        flex: calc(50% - #{$flow-size/2}) 0 0;
+      }
+    }
+
+    @include break(l, down) {
+      flex-direction: column;
+
+      & > * {
+        &:not(:first-child) {
+          margin-left: 0 !important;
+        }
+        &:not(:last-child) {
+          margin-right: 0 !important;
+        }
+      }
+
+      &.is-split {
+        & > * {
+          @include flex-item-base();
+        }
+      }
+    }
+  }
+}
+
+//@debug "util class`#{$debugList}`";

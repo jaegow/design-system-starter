@@ -1,0 +1,34 @@
+@import "~bulma/sass/utilities/mixins";
+
+.accordian {
+
+  .accordian__header {
+    cursor: pointer;
+    background-color: $card-header-background-color;
+    box-shadow: $card-header-shadow;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: $card-content-padding;
+  }
+
+  .accordian-header-icon {
+
+    & .arrow-up, & .arrow-down {
+      @include triangle($primary);
+    }
+
+    & .arrow-down {
+      transform: rotate(180deg);
+    }
+  }
+
+  &.is-closed {
+    .accordian__content {
+      display: none;
+    }
+  }
+
+}
+

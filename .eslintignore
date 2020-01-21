@@ -1,0 +1,10 @@
+
+node_modules/*
+/build/*
+/styleguide/*
+/dist/*
+/config/*
+/wiki/*
+
+# removed all eslinting for quicker dev
+# /src/*

@@ -1,0 +1,27 @@
+@import "../styles/sass/ds/helpers";
+@import "../styles/sass/ds/vendor/bulma/bulma.config.all";
+
+@include extraSpecificityScope() {
+  .field__message {
+    display: block;
+    height: 24px;
+    max-height: 24px;
+    width: 100%;
+    font-size: $size-7;
+    font-weight: $weight-normal;
+    display: flex;
+    align-items: center;
+
+    //.is-transparent {
+    //  //color: transparent;
+    //}
+
+    .is-warning, .is-error {
+      color: $danger;
+    }
+
+    .is-success {
+      color: $success;
+    }
+  }
+}

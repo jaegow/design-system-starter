@@ -1,0 +1,26 @@
+
+// example values for flow (accurate as of 12.04.2019
+// $ds-flow:         2rem;
+// $ds-flow-xxs:     $ds-flow / 4;
+// $ds-flow-xs:      $ds-flow / 3;
+// $ds-flow-s:       $ds-flow / 2;
+// $ds-flow-m:       $ds-flow;
+// $ds-flow-l:       $ds-flow * 1.5;
+// $ds-flow-xl:      $ds-flow * 2;
+// $ds-flow-xxl:     $ds-flow * 2.5;
+
+@function flow($flowKey) {
+  @if $flows-map {
+
+  }
+  @else {
+    @warn "$flows variable is not set";
+    @return null;
+  }
+
+  @if map-has-key($flows-map, $flowKey) {
+    @return map-get($flows-map, $flowKey);
+  } @else {
+    @warn "Unknown map key of: `#{$flowKey}` for $flows-map: `#{$flows-map}`";
+  }
+}

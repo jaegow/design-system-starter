@@ -1,0 +1,8 @@
+@import "variables.ds";
+
+// overwrite/set variables that are commonly used and coupled in
+// previously imported functions, mixins, etc
+$flows-map: $ds-flows;
+$breakpoints: $ds-breakpoints;
+
+$base-viewport-padding: 44px;

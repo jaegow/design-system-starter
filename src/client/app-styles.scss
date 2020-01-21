@@ -1,0 +1,16 @@
+@import "styles/sass/ds/helpers";
+@import "styles/sass/ds/vendor/bulma/bulma.config.all";
+@import "styles/sass/ds/vendor/bulma/bulma.output.all";
+@import "styles/sass/ds/vendor/bulma/bulma.output.all";
+@import "styles/sass/ds/util/utilities.flow";
+@import "styles/sass/ds/util/utilities.display";
+@import "styles/sass/ds/util/utilities.layout";
+@import "styles/sass/ds/util/utilities.flex";
+
+.material-icons {
+  @include material-icon-container;
+}
+
+html, body {
+  @include root-element();
+}

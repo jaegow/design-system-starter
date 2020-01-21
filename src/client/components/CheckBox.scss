@@ -1,0 +1,122 @@
+@import "../styles/sass/ds/helpers";
+@import "../styles/sass/ds/vendor/bulma/bulma.config.all";
+
+// todo: clean up ... was pulled in from a different org strategy
+
+$checkmark-background-color-selected: $primary !default;
+$checkmark-background-color-unselected: $white !default;
+$checkmark-background-color-disabled: $white !default;
+
+$checkmark-border-color-selected: $primary !default;
+$checkmark-border-color-unselected: $primary !default;
+$checkmark-border-color-disabled: $primary-disabled !default;
+
+$checkmark-color-selected: $white !default;
+$checkmark-color-unselected: transparent !default;
+$checkmark-color-disabled: transparent !default;
+$checkmark-color-selected-disabled: $primary-disabled !default;
+
+$checkmark-border-width: 2px !default;
+$checkmark-box-size: 20px !default;
+
+$checkmark-font: $family-primary !default;
+
+@include extraSpecificityScope() {
+
+  .checkbox-container {
+    position: relative;
+    cursor: pointer;
+
+    label {
+      display: flex;
+      flex-direction: row;
+      cursor: pointer;
+      color: #0a0a0a;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: normal;
+      margin: 0;
+
+      input {
+        // Hide checkbox visually but remain accessible to screen readers.
+        // Source: https://polished.js.org/docs/#hidevisually
+        border: 0;
+        clip: rect(0 0 0 0);
+        clippath: inset(50%);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        white-space: nowrap;
+      }
+
+      span {
+        margin-left: flow(xxs);
+        //display: block;
+      }
+    }
+
+    .checkmark {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.is-disabled {
+      .checkmark {
+        background-color: $checkmark-background-color-disabled;
+        border-color: $checkmark-border-color-disabled;
+
+        &::after {
+          color: $checkmark-color-disabled;
+        }
+      }
+
+      &.is-selected {
+        .checkmark {
+          &::after {
+            color: $checkmark-color-selected-disabled;
+          }
+        }
+      }
+
+    }
+  }
+
+  // todo: solve without extra markup needed for icon
+  // todo: was done with before/after but drawing the checkmark was a pain
+  .checkmark {
+    width: $checkmark-box-size;
+    height: $checkmark-box-size;
+    cursor: pointer;
+    background-color: $checkmark-background-color-unselected;
+    border: $checkmark-border-width solid $checkmark-border-color-unselected;
+    transition: background-color .2s ease-in-out;
+
+    @extend %material-icon;
+
+    &::after {
+      content: "\e876";
+      color: $checkmark-color-unselected;
+      transition: color .2s ease-in-out; // todo: make a animation mixin / and animation definitions for design system
+    }
+  }
+
+  .is-selected {
+    .checkmark {
+      background-color: $checkmark-background-color-selected;
+      border-color: $checkmark-border-color-selected;
+
+      &::after {
+        color: $checkmark-color-selected;
+      }
+    }
+  }
+
+
+}
+
+

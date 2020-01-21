@@ -1,0 +1,43 @@
+@import "../styles/sass/ds/helpers";
+@import "../styles/sass/ds/vendor/bulma/bulma.config.all";
+
+@include extraSpecificityScope() {
+
+  // uses button as the base class
+  .button.is-burger {
+    background-color: transparent;
+    border-color: transparent;
+    position: relative;
+    color: $white;
+    display: block;
+
+    span {
+      background-color: currentColor;
+      display: block;
+      height: 1px;
+      left: calc(50% - 8px);
+      position: absolute;
+      transform-origin: center;
+      transition-duration: 86ms;
+      transition-property: background-color,opacity,transform;
+      transition-timing-function: ease-out;
+      width: 20px;
+
+      &:nth-child(1) {
+        top: calc(50% - 6px);
+      }
+      &:nth-child(2) {
+        top: calc(50% - 1px);
+      }
+      &:nth-child(3) {
+        top: calc(50% + 4px);
+      }
+    }
+
+    &:hover {
+      border-color: transparent;
+      background-color: transparent;
+    }
+
+  }
+}
